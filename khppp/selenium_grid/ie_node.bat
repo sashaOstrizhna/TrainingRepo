@@ -1,0 +1,2 @@
+ java -Dwebdriver.iexplorer.driver=E:\IEDriverServer.exe -jar selenium-server-standalone-2.44.0.jar -role webdriver -hub http://localhost:4444/grid/register -port 5558 -browser browserName=iexplorer
+cmd \k
