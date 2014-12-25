@@ -30,22 +30,23 @@ public class SubgroupTest extends BaseCase {
         groupJournalSteps = new GroupJournalSteps(pages);
     }
 
-    @Test(dataProvider = "testData")
+    @Test(dataProvider = "testData", priority = 1)
     public void preConditions(List<String> data) {
         login(data);
     }
 
     @Features(SUBGROUP)
-    @Test(dataProvider = "testData", dependsOnMethods = "preConditions")
+    @Test(dataProvider = "testData", priority = 2)
     public void addNewEmptySubgroup(List<String> data) {
-        addSubgroupSteps.addNewEmptySubgroup(data.get(SUBGROUP_NAME));
+        addSubgroupSteps.addNewEmptySubgroup(data.get(SUBGROUP_NAME), data.get(GROUP_NAME));
         assertThat(groupJournalSteps.isEmptyGroupJournalDisplayed(), is(true));
     }
 
     @Features(SUBGROUP)
-    @Test(dataProvider = "testData", dependsOnMethods = "preConditions")
+    @Test(dataProvider = "testData", priority = 3)
     public void addNewSubgroup(List<String> data) {
-        addSubgroupSteps.addNewSubgroup(data.get(SUBGROUP_NAME));
+        navBarSteps.navigateTo("Groups");
+        addSubgroupSteps.addNewSubgroup(data.get(SUBGROUP_NAME), data.get(MENTOR_NAME), data.get(MENTEE_NAME), data.get(GROUP_NAME));
         assertThat(groupJournalSteps.isGroupJournalDisplayedI(), is(true));
     }
 
@@ -53,4 +54,5 @@ public class SubgroupTest extends BaseCase {
     public void logout() {
         navBarSteps.logout();
     }
+
 }

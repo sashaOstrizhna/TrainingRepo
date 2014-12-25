@@ -22,25 +22,23 @@ public class AddSubgroupSteps {
     }
 
     @Step("When I add new subgroup {0},{1}")
-    public void addNewEmptySubgroup(String subName) {
+    public void addNewEmptySubgroup(String subName, String groupName) {
 
-        groupsTab.clickFirstGroup();
+        groupsTab.clickGroupByName(groupName);
         groupJournalPage.clickAddSubgroupBtn();
         addSubgroupTab.enterSubgroupName(subName);
-        addSubgroupTab.selectMentor();
         addSubgroupTab.clickSaveBtn();
     }
 
-    public void addNewSubgroup(String subName) {
+    public void addNewSubgroup(String subName, String mentorName, String menteeName, String groupName) {
 
-        groupsTab.clickFirstGroup();
+        groupsTab.clickGroupByName(groupName);
         groupJournalPage.clickAddSubgroupBtn();
         addSubgroupTab.enterSubgroupName(subName);
-        addSubgroupTab.selectMentor();
-        addSubgroupTab.chooseMentee();
+        addSubgroupTab.selectMentor(mentorName);
+        addSubgroupTab.chooseMentee(menteeName);
         addSubgroupTab.clickAddBtn();
         addSubgroupTab.clickSaveBtn();
-
     }
 
 

@@ -19,14 +19,14 @@ public class AddSubgroupTab extends Component{
         typeInto(subName, groupName);
     }
 
-    public void selectMentor() {
+    public void selectMentor(String mentorName) {
         Select sel = new Select(find(By.xpath("//select[@name='choosenMentors']")));
-        sel.selectByIndex(2);
+        sel.selectByVisibleText(mentorName);
     }
 
-    public void chooseMentee() {
+    public void chooseMentee(String menteeName) {
         Select sel = new Select(find(By.xpath("//select[@name='allMentees']")));
-        sel.selectByIndex(1);
+        sel.selectByVisibleText(menteeName);
     }
 
     public void clickAddBtn() {
