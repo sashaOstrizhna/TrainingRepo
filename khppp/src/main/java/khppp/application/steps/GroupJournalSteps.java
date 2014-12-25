@@ -20,14 +20,13 @@ public class GroupJournalSteps {
     }
 
 
-    //public boolean isGroupJournalDisplayed() {
-    //    return groupJournalPage.isCreatedSubgroupDisplayed("irenSubgroup");
-    //}
+    public void deleteSubgroupByName(String subGroupName){
+        groupJournalPage.deleteSubgroupByName(subGroupName);
+    }
 
     public boolean isEmptyGroupJournalDisplayed() {
         return groupJournalPage.isEmptySignDisplayed("irenEmptySubgroup");
     }
-
 
     public boolean isGroupJournalDisplayed() {
         return groupJournalPage.isPageNameDisplayed();

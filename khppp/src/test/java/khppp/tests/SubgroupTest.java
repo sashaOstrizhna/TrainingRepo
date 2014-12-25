@@ -40,6 +40,7 @@ public class SubgroupTest extends BaseCase {
     public void addNewEmptySubgroup(List<String> data) {
         addSubgroupSteps.addNewEmptySubgroup(data.get(SUBGROUP_NAME), data.get(GROUP_NAME));
         assertThat(groupJournalSteps.isEmptyGroupJournalDisplayed(), is(true));
+        groupJournalSteps.deleteSubgroupByName(data.get(SUBGROUP_NAME));
     }
 
     @Features(SUBGROUP)
@@ -48,6 +49,7 @@ public class SubgroupTest extends BaseCase {
         navBarSteps.navigateTo("Groups");
         addSubgroupSteps.addNewSubgroup(data.get(SUBGROUP_NAME), data.get(MENTOR_NAME), data.get(MENTEE_NAME), data.get(GROUP_NAME));
         assertThat(groupJournalSteps.isGroupJournalDisplayedI(), is(true));
+        groupJournalSteps.deleteSubgroupByName(data.get(SUBGROUP_NAME));
     }
 
     @AfterClass

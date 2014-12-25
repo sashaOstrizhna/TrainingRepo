@@ -1,6 +1,5 @@
 package khppp.tests;
 
-import khppp.application.components.GroupTasksPage;
 import static khppp.excel.utils.ExcelColumn.*;
 import khppp.application.steps.*;
 import org.testng.annotations.AfterClass;
@@ -21,7 +20,6 @@ public class GroupTasksTest extends BaseCase {
 
     LoginSteps loginSteps;
     GroupTasksSteps groupTasksSteps;
-    GroupTasksPage groupTasksPage;
 
     @BeforeClass
     public void setUp() {
@@ -34,12 +32,12 @@ public class GroupTasksTest extends BaseCase {
         login(data);
     }
 
-//    @Features(GROUP_TASKS_PAGE)
-//    @Test(priority = 2)
-//    public void sortByNameCheck() {
-//        groupTasksSteps.goToGroupTasksPage();
-//        assertThat(groupTasksSteps.isSortedByTaskName(), is(true));
-//    }
+    @Features(GROUP_TASKS_PAGE)
+    @Test(priority = 2)
+    public void sortByNameCheck() {
+        groupTasksSteps.goToGroupTasksPage();
+        assertThat(groupTasksSteps.isSortedByTaskName(), is(true));
+    }
 
     @Features(FILTER)
     @Test(dataProvider = "testData", priority = 2)

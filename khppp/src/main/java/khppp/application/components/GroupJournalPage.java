@@ -39,6 +39,13 @@ public class GroupJournalPage extends Component {
         assignBtn.click();
     }
 
+    public void deleteSubgroupByName(String subgroupName){
+        WebElement deleteBtn = waitFor(xpath("//tbody[@id='table_body']/tr//td[contains(.,'%s')]//following-sibling::td//a[contains(@class,'btn-danger')]", subgroupName));
+        deleteBtn.click();
+        WebElement confirmOK = waitFor(xpath("//div[@id='removeSubGroup']/div/div/div[3]/button[1]"));
+        confirmOK.click();
+    }
+
     public List<Subgroup> getAllSubgroups() {
         int numberOfRows = waitForAll(xpath("//*[@id='table_group_journal']//tr")).size();
         System.out.println("ROWS " + numberOfRows);

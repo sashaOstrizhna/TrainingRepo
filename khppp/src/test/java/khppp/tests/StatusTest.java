@@ -56,6 +56,7 @@ public class StatusTest extends BaseCase {
         assertThat(statusSteps.statusChanged("Closed"), is(true));
         statusSteps.clickTaskNameStep();
         statusSteps.clickInProgressBtnStep();
+        navBarSteps.logout();
         assertThat(statusSteps.statusChanged("In progress"), is(true));
     }
 
@@ -63,8 +64,8 @@ public class StatusTest extends BaseCase {
     public void changeStatusByMentee() {
         statusSteps.clickTaskNameStep();
         statusSteps.clickResolvedBtn();
+        navBarSteps.logout();
         assertThat(statusSteps.statusChanged("Resolved"), is(true));
-
     }
 
 }
