@@ -75,12 +75,7 @@ public class GroupsTest extends BaseCase {
     }
 
     //************************AddGroup Tab Tests*************************
-<<<<<<< HEAD
-	//sfdkjsdhsdjkhs Iren!!!!!!!!
-=======
-	//vcncnbbvnbvn my Comment!!!!
->>>>>>> 678cd146d6b4521d0d04811b87ea254cce7d1191
-
+    //dfjgjdfgjdfgjd
     @Features(GROUP)
     @Test(dataProvider = "testData", dependsOnMethods = "creationOfMentee")
     public void displayGroupWithMentee(List<String> data) {
